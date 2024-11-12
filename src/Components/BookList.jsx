@@ -5,7 +5,7 @@ const BookList = () => {
     const books = useSelector((state) => state.bookR.books.books);
     const dispatch = useDispatch();
 
-    
+
     const handleDeleteBook = (id) => {
         dispatch(removeBook(id));
     };
@@ -17,10 +17,12 @@ const BookList = () => {
                     {books.map(book => 
                         <li className="text-2xl font-bold" key={book.id}>
                             {book.title} by {book.author} - ${book.price} - {book.quantity} pcs 
+                            
                             <button 
                                 className="btn btn-error ml-6"
                                 onClick={() => handleDeleteBook(book.id)}
                             >Delete</button>
+                            
                         </li>
                     )}
                 </ul>

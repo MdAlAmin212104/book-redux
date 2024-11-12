@@ -18,20 +18,15 @@ const bookSlices = createSlice({
     reducers: {
         addBook: (state, action) => {
             state.books.books.push(action.payload)
-            console.log(action.payload);
         },
         removeBook: (state, action) => {
             const id = action.payload
             state.books.books = state.books.books.filter ((book) => book.id !== id) 
-            //delete state.books[id]
+            
         },
-        // updateBook: (state, action) => {
-        //     const { id, updatedFields } = action.payload
-        //     Object.assign(state.books[id], updatedFields)
-        // },
     },
 })
 
 
-export const { removeBook, addBook } = bookSlices.actions
+export const { removeBook, addBook, updateBook } = bookSlices.actions
 export default bookSlices.reducer;
